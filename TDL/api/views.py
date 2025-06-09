@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.permissions import AllowAny
 from .serializers import *
 from .models import *
 
@@ -22,3 +23,8 @@ class CreateToDo(generics.CreateAPIView):
 class DeleteToDo(generics.DestroyAPIView):
     queryset = ToDo.objects.all()
     serializer_class = ToDoSerializer
+
+class UserRegistration(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = ToDoUserSerializer
+    permission_classes = [AllowAny]
