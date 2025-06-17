@@ -88,7 +88,5 @@ python manage.py runserver
 
 - [ ] Filtering, searching, and ordering
 - [ ] Task prioritization or due dates
-- [ ] Testing with Django's test client or pytest
-- [ ] Optional UI with Django Templates or React
 
 ---
