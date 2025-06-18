@@ -12,6 +12,7 @@ A simple RESTful ToDo List API built with **Django** and **Django REST Framework
   - Create, View, Update, Delete
 - ✅ Only authenticated users can manage their own ToDos
 - ✅ Boolean field to mark ToDos as completed
+- ✅ Filtering, searching, and ordering
 
 ---
 
@@ -86,7 +87,6 @@ python manage.py runserver
 
 ## 🗓 ToDo Features in Progress
 
-- [ ] Filtering, searching, and ordering
 - [ ] Task prioritization or due dates
 
 ---
