@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 from .serializers import *
 from .models import *
 
@@ -14,6 +16,11 @@ class ListToDo(generics.ListAPIView):
     serializer_class = ToDoSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['completed']
+    search_fields = ['title']
+    ordering_fields = ['date']
+
 
 
     def get_queryset(self):
@@ -24,6 +31,10 @@ class UpdateToDo(generics.RetrieveUpdateAPIView):
     serializer_class = ToDoSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['completed']
+    search_fields = ['title']
+    ordering_fields = ['date']
 
 
     def get_queryset(self):
@@ -45,6 +56,7 @@ class DeleteToDo(generics.DestroyAPIView):
     serializer_class = ToDoSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+    
 
     def get_queryset(self):
         return ToDo.objects.filter(user=self.request.user)
