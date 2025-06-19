@@ -49,6 +49,7 @@ class CreateToDo(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+        raise 
 
 
 class DeleteToDo(generics.DestroyAPIView):
