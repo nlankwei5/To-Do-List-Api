@@ -90,7 +90,7 @@ python manage.py runserver
 
 ---
 
-🐳 Docker Setup (Optional)
+ Docker Setup (Optional)
 - Ensure you have Docker installed.
 - Configure your .env file 
 - Run Docker Compose:
@@ -99,3 +99,9 @@ python manage.py runserver
 docker-compose up --build
 ```
 This will spin up both Django and PostgreSQL containers.
+
+
+Future Plans
+
+- Deployment to Render or similar cloud platform
+- CI/CD pipleine
