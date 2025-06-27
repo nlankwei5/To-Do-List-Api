@@ -1,32 +1,37 @@
 
-# 📝 ToDo List API
+#  ToDo List API
 
 A simple RESTful ToDo List API built with **Django** and **Django REST Framework**, featuring **JWT authentication** and user-specific task management. 
 ---
 
-## 🚀 Features
+##  Features
 
-- ✅ User Registration
-- ✅ JWT Authentication (Login with Access/Refresh Tokens)
-- ✅ CRUD operations for ToDos:
+-  User Registration
+-  JWT Authentication (Login with Access/Refresh Tokens)
+-  CRUD operations for ToDos:
   - Create, View, Update, Delete
-- ✅ Only authenticated users can manage their own ToDos
-- ✅ Boolean field to mark ToDos as completed
-- ✅ Filtering, searching, and ordering
+-  Only authenticated users can manage their own ToDos
+-  Due dates
+-  Boolean field to mark ToDos as completed
+-  Filtering, searching, and ordering
+-  PostgreSQL Database
+-  Docker Support for easy setup and deployment
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Python 3
 - Django
 - Django REST Framework
 - SimpleJWT (for JWT Auth)
+- Docker
+- Postgresql
 
 
 ---
 
-## 🔐 Authentication
+##  Authentication
 
 Authentication is handled via **JSON Web Tokens (JWT)**.
 
@@ -85,8 +90,12 @@ python manage.py runserver
 
 ---
 
-## 🗓 ToDo Features in Progress
+🐳 Docker Setup (Optional)
+- Ensure you have Docker installed.
+- Configure your .env file 
+- Run Docker Compose:
 
-- [ ] Task prioritization or due dates
-
----
+```bash 
+docker-compose up --build
+```
+This will spin up both Django and PostgreSQL containers.
