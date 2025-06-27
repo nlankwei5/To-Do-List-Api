@@ -1,0 +1,32 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local virtual environments
+env/
+venv/
+new_venv/
+
+# Ignore local config files
+*.env
+.env
+
+# Ignore Git and logs
+.git/
+.gitignore
+*.log
+
+# Ignore IDE/editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore DB files (if using SQLite)
+*.sqlite3
+
+# Ignore Docker build artifacts
+*.tar
+*.gz
